@@ -3313,8 +3313,12 @@
   min-height: 100vh;
 }
 
-.sidebar-new.closed ~ .main-content-new {
+.dashboard-layout-new.sidebar-closed .main-content-new {
   margin-left: 80px;
+}
+
+.dashboard-layout-new.sidebar-open .main-content-new {
+  margin-left: 280px;
 }
 
 .topbar-new {

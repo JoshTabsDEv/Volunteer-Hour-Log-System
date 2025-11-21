@@ -122,7 +122,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="dashboard-layout-new">
+    <div className={`dashboard-layout-new ${sidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>
       {/* Sidebar */}
       <aside className={`sidebar-new ${sidebarOpen ? "open" : "closed"}`}>
         <div className="sidebar-header-new">
