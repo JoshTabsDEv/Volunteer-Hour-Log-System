@@ -110,209 +110,138 @@ export default function Login() {
 
   return (
     <GoogleOAuthProvider clientId="1016616466017-03fsmris44cv89qnelaed641obt80dmh.apps.googleusercontent.com">
-      <div className="login-wrapper-new">
-        {/* Top Header Bar */}
-        <header className="login-header-bar">
-          <div className="header-content">
-            <div className="header-logo">
-              <div className="logo-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <div className="login-page-new">
+        {/* Animated Background */}
+        <div className="login-bg-pattern">
+          <div className="bg-blob blob-1"></div>
+          <div className="bg-blob blob-2"></div>
+          <div className="bg-blob blob-3"></div>
+        </div>
+
+        {/* Centered Content */}
+        <div className="login-center-container">
+          {/* Logo and Title Section */}
+          <div className="login-hero-section">
+            <div className="hero-logo-wrapper">
+              <div className="hero-logo">
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
                   <path d="M2 17l10 5 10-5"></path>
                   <path d="M2 12l10 5 10-5"></path>
                 </svg>
               </div>
-              <span className="header-brand">VolunteerLog</span>
             </div>
-            <button 
-              className="header-register-btn"
-              onClick={() => navigate("/register")}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="8.5" cy="7" r="4"></circle>
-                <line x1="20" y1="8" x2="20" y2="14"></line>
-                <line x1="23" y1="11" x2="17" y2="11"></line>
-              </svg>
-              Sign Up
-            </button>
+            <h1 className="hero-title">VolunteerLog</h1>
+            <p className="hero-subtitle">Track your volunteer hours with ease</p>
           </div>
-        </header>
 
-        {/* Main Content Area */}
-        <div className="login-main-container">
-          {/* Left Side - Visual Elements */}
-          <div className="login-visual-section">
-            <div className="visual-content">
-              <div className="visual-badge">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          {/* Login Card */}
+          <div className="login-card-new">
+            <div className="card-header-new">
+              <h2>Sign In</h2>
+              <p>Enter your credentials to continue</p>
+            </div>
+
+            {message && (
+              <div className={`alert-box-new ${messageType}`}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  {messageType === "success" ? (
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  ) : (
+                    <>
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </>
+                  )}
                 </svg>
-                <span>Secure Platform</span>
+                <span>{message}</span>
               </div>
-              
-              <h1 className="visual-title">Volunteer Hours Log</h1>
-              <p className="visual-description">
-                Track and manage volunteer hours with our simple and efficient platform
-              </p>
+            )}
 
-              <div className="visual-stats">
-                <div className="stat-item">
-                  <div className="stat-number">99.9%</div>
-                  <div className="stat-label">Uptime</div>
-                </div>
-                <div className="stat-divider"></div>
-                <div className="stat-item">
-                  <div className="stat-number">24/7</div>
-                  <div className="stat-label">Support</div>
-                </div>
-                <div className="stat-divider"></div>
-                <div className="stat-item">
-                  <div className="stat-number">100%</div>
-                  <div className="stat-label">Secure</div>
-                </div>
-              </div>
-
-              <div className="visual-features">
-                <div className="visual-feature">
-                  <div className="feature-dot"></div>
-                  <span>Easy hour tracking</span>
-                </div>
-                <div className="visual-feature">
-                  <div className="feature-dot"></div>
-                  <span>Simple logging system</span>
-                </div>
-                <div className="visual-feature">
-                  <div className="feature-dot"></div>
-                  <span>Quick access and management</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Decorative Elements */}
-            <div className="visual-decorations">
-              <div className="decoration-circle circle-1"></div>
-              <div className="decoration-circle circle-2"></div>
-              <div className="decoration-circle circle-3"></div>
-              <div className="decoration-grid"></div>
-            </div>
-          </div>
-
-          {/* Right Side - Login Form */}
-          <div className="login-form-section">
-            <div className="form-wrapper">
-              <div className="form-header">
-                <h2>Welcome Back</h2>
-                <p>Sign in to access your account</p>
-              </div>
-
-              <div className="form-body">
-                {message && (
-                  <div className={`alert-message ${messageType}`}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      {messageType === "success" ? (
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      ) : (
-                        <>
-                          <circle cx="12" cy="12" r="10"></circle>
-                          <line x1="12" y1="8" x2="12" y2="12"></line>
-                          <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                        </>
-                      )}
-                    </svg>
-                    <span>{message}</span>
-                  </div>
-                )}
-
-                <div className="form-field">
-                  <div className="field-label">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    <span>Username</span>
-                  </div>
+            <div className="form-fields-new">
+              <div className="field-wrapper-new">
+                <label className="field-label-new">Username</label>
+                <div className="input-wrapper-new">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
                   <input
                     type="text"
-                    placeholder="Enter your username"
+                    placeholder="Enter username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     onKeyPress={handleKeyPress}
                     disabled={isLoading}
-                    className={message && messageType === "error" && !username ? "field-error" : ""}
+                    className={message && messageType === "error" && !username ? "input-error-new" : ""}
                   />
                 </div>
+              </div>
 
-                <div className="form-field">
-                  <div className="field-label">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                    </svg>
-                    <span>Password</span>
-                  </div>
+              <div className="field-wrapper-new">
+                <label className="field-label-new">Password</label>
+                <div className="input-wrapper-new">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
                   <input
                     type="password"
-                    placeholder="Enter your password"
+                    placeholder="Enter password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     onKeyPress={handleKeyPress}
                     disabled={isLoading}
-                    className={message && messageType === "error" && !password ? "field-error" : ""}
+                    className={message && messageType === "error" && !password ? "input-error-new" : ""}
                   />
-                </div>
-
-                <button 
-                  className="form-submit-btn" 
-                  onClick={handleLogin}
-                  disabled={isLoading}
-                >
-                  {isLoading ? (
-                    <span className="btn-loading">
-                      <span className="btn-spinner"></span>
-                      Signing in...
-                    </span>
-                  ) : (
-                    <>
-                      <span>Sign In</span>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </>
-                  )}
-                </button>
-
-                <div className="form-divider">
-                  <div className="divider-line"></div>
-                  <span>or continue with</span>
-                  <div className="divider-line"></div>
-                </div>
-
-                <div className="google-auth-wrapper">
-                  <GoogleLogin
-                    onSuccess={handleGoogleLogin}
-                    onError={() => {
-                      setMessage("Google login failed");
-                      setMessageType("error");
-                    }}
-                    useOneTap
-                  />
-                </div>
-
-                <div className="form-footer">
-                  <p>
-                    Don't have an account?{" "}
-                    <button 
-                      className="footer-link"
-                      onClick={() => navigate("/register")}
-                    >
-                      Create one now
-                    </button>
-                  </p>
                 </div>
               </div>
+            </div>
+
+            <button 
+              className="login-button-new" 
+              onClick={handleLogin}
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <span className="btn-loader-new">
+                  <span className="loader-spinner-new"></span>
+                  Signing in...
+                </span>
+              ) : (
+                <>
+                  Sign In
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </>
+              )}
+            </button>
+
+            <div className="divider-new">
+              <span>or</span>
+            </div>
+
+            <div className="google-auth-new">
+              <GoogleLogin
+                onSuccess={handleGoogleLogin}
+                onError={() => {
+                  setMessage("Google login failed");
+                  setMessageType("error");
+                }}
+                useOneTap
+              />
+            </div>
+
+            <div className="card-footer-new">
+              <p>
+                Don't have an account?{" "}
+                <button className="link-button-new" onClick={() => navigate("/register")}>
+                  Sign up here
+                </button>
+              </p>
             </div>
           </div>
         </div>
