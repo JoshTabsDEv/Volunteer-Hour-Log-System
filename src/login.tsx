@@ -109,7 +109,7 @@ export default function Login() {
   };
 
   return (
-    <GoogleOAuthProvider clientId="1016616466017-03fsmris44cv89qnelaed641obt80dmh.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="479399301536-c0pf9mohags0427mv15a4dbqj9crs7ek.apps.googleusercontent.com">
       <div className="login-page-new">
         {/* Animated Background */}
         <div className="login-bg-pattern">
